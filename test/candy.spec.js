@@ -36,6 +36,9 @@ test('Generate the Image', async ({ page }) => {
   
   // Click the 'Existing Character' button
   await page.getByRole('button', { name: 'Existing Character' }).click();
+
+  // Select a Realistic character 
+  await page.getByText('Realistic').click();
   
   // Select a character with a specific ID
   await page.locator('//*[@id="18835477"]').click();
