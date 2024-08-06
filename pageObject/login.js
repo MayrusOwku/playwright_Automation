@@ -1,4 +1,4 @@
-class loginPage {
+class loginpage {
 
     constructor(page)
     {
@@ -18,24 +18,26 @@ class loginPage {
         
         // Locate the 'Sign in' button
         this.signInLocator = page.getByRole('button', { name: 'Sign in' });
+        
+        //this.openUserMenu =  page.getByRole('button', { name: 'Open user menu' });
       
     }
 
-
+async goTo()
+{
+  await this.page.goto('https://candy.ai/');
+}
   // Action to be performed on the above located elements 
 
-
-  async goTo()
-  {
-   await this.page.goTo('https://candy.ai/');
-  }
-
- async loginHomePage(username,password)
+ async loginHomePage (username,password)
      {
        await this.signInAnimeLocator.click();
        await this.loginLocator.click();
-       await this.emailLocator.click().fill(username);
-       await this.passwordLocator.click().fill(password); 
+       await this.emailLocator.type(username);
+       await this.passwordLocator.type(password); 
        await this.signInLocator.click();
+       //await this.openUserMenu.click();
      }
    };
+    
+  module.exports={loginpage}
