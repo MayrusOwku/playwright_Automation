@@ -1,20 +1,12 @@
 import { test, expect } from '@playwright/test';
-const { login } = require('../pages/login')
+const { loginPage } = require('../pages/login')
 //const {login} = require('../utils/mainFile')
-
+const login1 = new loginPage(page);
 // login and generate the Image 
 test('Generate the Image', async ({ page }) => {
   // Navigate to the Candy AI homepage
-  await page.goto('https://candy.ai/');
-
-  await login.signIn()
-  await login.login()
-  await login.emailClick()
-  await login.emailFill()
-  await login.passwordClick()
-  await login.passwordFill()
-  await login.signIn()
-  
+  login1.goTo();
+  login1.loginHomePage();
   // Click the 'Anime' button (second instance of the button)
   await page.getByRole('button', { name: 'Anime' }).nth(1).click();
   

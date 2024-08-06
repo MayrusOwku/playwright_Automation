@@ -1,3 +1,5 @@
+const { expect } = require("@playwright/test");
+
 exports.login = class login {
 
     constructor(page) 
@@ -17,7 +19,7 @@ exports.login = class login {
         this.passwordLocator = page?.getByRole('textbox', { name: 'Password' });
         
         // Locate the 'Sign in' button
-        this.signInLocator = page?.getByRole('button', { name: 'Sign in' }).click();
+        this.signInLocator = page?.getByRole('button', { name: 'Sign in' });
       
     }
 
