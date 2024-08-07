@@ -37,8 +37,9 @@ npm i -D @playwright/test allure-playwright
 ```
 
 2) Installing Allure command line
-Ref: https://www.npmjs. com/package/allure-command line
-
+```
+Ref: https://www.npmjs.com/package/allure-commandline
+```
 ```sh
 npm install --save-dev allure-commandline
 ```
