@@ -8,19 +8,19 @@ class generateImage {
 
       this.generateImageNav = page.locator('//*[@id="app"]/div[4]/nav/ul[1]/li[4]/a/div')
        
-      // Locate the 'Login' button locator
+      // Locate the 'change Locator' button locator
        this.changeLocator = page.getByRole('button', { name: 'Change' });
        
-       // Locate the email textbox to focus on it
+       // Locate the existing Character Locator
        this.existingCharacterLocator = page.getByRole('button', { name: 'Existing Character' });
    
-       // Locate the password locator
+       // Locate the realistic locator
        this.realisticLocator = page.getByText('Realistic');
        
-       // Locate the 'Sign in' button locator
+       // Locate the character Image  locator
        this.characterImageLocator = page.locator('//*[@id="42594464"]');
      
-       // Locate the 'Sign in' button locator
+       // Locate the 'select' button locator
        this.selectLocator = page.getByRole('button', { name: 'Select' });
 
        // Locate cute Pic Filter Locator  
@@ -77,6 +77,10 @@ async generateImagePage ()
     async insufficientTokens()
     {
       await this.insufficientTokensLoactor.click()
+      await this.closeIconLoactore.click()
+    }
+    async closeIcon()
+    {
       await this.closeIconLoactore.click()
     }
 
