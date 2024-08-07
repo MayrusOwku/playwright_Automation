@@ -40,41 +40,34 @@ npm i -D @playwright/test allure-playwright
 Ref: https://www.npmjs. com/package/allure-command line
 
 ```sh
-npm install -g allure-commandline --save-dev
-```
-(or)
-```sh
-sudo npm install -g allure-commandline --save-dev
+npm install --save-dev allure-commandline
 ```
 
 3) playwright.config-js
 ```sh
-reporter= l'allure-playwright', {outputFolder: 'my-allure-results'}]
-```
-(or)
-```sh
-npx playwright test --reporter=allure-playwright
-```
+reporter: [["line"], ["allure-playwright"]],
+````
 
 ## how to Run the test suit
 
 Run the tests
 ```sh
-npm test tests/Reporters.spec.js
+npx playwright test
 ```
 
 ## How to Generate and Open Allure Report 
 
 1) Generate Allure Report:
 ```sh
-allure generate allure-results -o allure-report --clean
+npx allure serve allure-results
 ```
 Make sure Java is installed in this system 
 
 2) Open Allure Report:
 ```sh
-allure open allure-report
+npx allure serve allure-results
 ```
+
 ## Built a POM framework 
 ```sh
 there are multiple folders like 
