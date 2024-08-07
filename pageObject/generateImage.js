@@ -4,67 +4,61 @@ class generateImage {
    {
        this.page = page;
  
-       // Locate the 'Anime' button (second instance of the button)
-       this.openUserMenu =  page.getByRole('button', { name: 'Open user menu' });
+      // Locate the 'generate Image in Nav bar' button locator
+
+      this.generateImageNav = page.locator('//*[@id="app"]/div[4]/nav/ul[1]/li[4]/a/div')
        
-       // Locate the 'Login' button
+      // Locate the 'Login' button locator
        this.changeLocator = page.getByRole('button', { name: 'Change' });
        
        // Locate the email textbox to focus on it
        this.existingCharacterLocator = page.getByRole('button', { name: 'Existing Character' });
    
-       // Locate the password
+       // Locate the password locator
        this.realisticLocator = page.getByText('Realistic');
        
-       // Locate the 'Sign in' button
+       // Locate the 'Sign in' button locator
        this.characterImageLocator = page.locator('//*[@id="42594464"]');
      
-       // Locate the 'Sign in' button
+       // Locate the 'Sign in' button locator
        this.selectLocator = page.getByRole('button', { name: 'Select' });
 
-       //
-       this.cutePicFilterLocatorutePicFilterLocator = page.getByText('Cute Picture').first()
+       // Locate cute Pic Filter Locator  
+       this.cutePicFilterLocator  = page.getByText('Cute Picture').first()
 
-       //
+       // Locate swimming Filter locator 
        this.swimmingFilterLocator = page.getByText('Swimming').first()
 
-       //
+       // Locate one Pictur card locator      
        this.onePictureLoactore = page.locator('.flex > .mt-4 > div > div').first()
 
-       //
+       // Locate Generate Image with 2 locator 
        this.GenerateImage2Loactore = page.getByRole('button', { name: 'Generate 2 tokens' })
 
-       //
+       // Locate Generate Image with 32 locator
        this.GenerateImage32Loactor= page.getByRole('button', { name: 'Generate 32 tokens' })
       
-       //
+       // locate insufficient Tokens locator
       this.insufficientTokensLoactor = page.getByText('Insufficient Tokens! Oops!')
 
-      //
+      // locate 16 pic locator
       this.sixteenPictureLoactore=page.locator('.mt-4 > div > div:nth-child(4)')
    
-      //
+      // close icon locator
       this.closeIconLoactore = page.locator('#image-generation-modal-container').getByRole('link').first()
     }
-
-   // this is take use to generate image page 
-   async goToGenerateImage()
-   {
-     await this.page.goto('https://candy.ai/generate-image');
-   }
-
 
  // Action to be performed on the above located elements 
 
 async generateImagePage ()
     {
-      await this.openUserMenu.click();
+      await this.generateImageNav.click()
       await this.changeLocator.click();
       await this.existingCharacterLocator.click();
       await this.realisticLocator.click();
       await this.characterImageLocator.click();
-      //await element.scrollIntoViewIfNeeded().click();
-      await this.cutePicFilterLocatorutePicFilterLocator.click()
+      await this.selectLocator.click();
+      await this.cutePicFilterLocator.click()
       await this.swimmingFilterLocator.click();
       await this.onePictureLoactore.click();
     }
@@ -72,7 +66,6 @@ async generateImagePage ()
     {
       await this.onePictureLoactore.click();
       await this.GenerateImage2Loactore.click()
-      await page.screenshot({ path: '/Users/suryamowku/playwright_Automation/SuccessScreenshots.png', fullPage: true });
 
     }
     async generateImage32tokens ()
@@ -84,11 +77,8 @@ async generateImagePage ()
     async insufficientTokens()
     {
       await this.insufficientTokensLoactor.click()
-      await page.screenshot({ path: '/Users/suryamowku/playwright_Automation/ErrorScreenshots.png', fullPage: true });
       await this.closeIconLoactore.click()
     }
-    
-
 
   };
    
