@@ -10,12 +10,11 @@ test('Generate the Image', async ({ page }) => {
   await loginPageHome.goTo();
   await loginPageHome.loginHomePage(username,Password);
   
-  const generateImage2 = new generateImage(page);
-
+  const generateImagePage1 = new generateImage(page);
   // // Navigate to the image generation page
-   await generateImage2.goToGenerateImage();
-   await generateImage2.generateImagePage();
-   await generateImage2.generateImage2tokens();
+   await generateImagePage1.goToGenerateImage();
+   await generateImagePage1.generateImagePage();
+   await generateImagePage1.generateImage2tokens();
 
 });
 
@@ -28,13 +27,12 @@ test('capture the Insufficient token error message', async ({ page }) => {
  const loginPageHome = new loginpage(page);
  await loginPageHome.goTo();
  await loginPageHome.loginHomePage(username,Password);
- 
- const generateImage2 = new generateImage(page);
+ const generateImagePage2 = new generateImage(page);
  // // Navigate to the image generation page
- await generateImage2.goToGenerateImage();
- await generateImage2.generateImagePage();
- await generateImage2.generateImage32tokens();
- await generateImage2.insufficientTokens();
+ await generateImagePage2.goToGenerateImage();
+ await generateImagePage2.generateImagePage();
+ await generateImagePage2.generateImage32tokens();
+ await generateImagePage2.insufficientTokens();
 
 
  
