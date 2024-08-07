@@ -31,15 +31,16 @@ npx playwright show-report
 ```
 ## Allure Reports Installation
 
+### Ref: https://www.npmjs.com/package/allure-commandline
+
+
 1) Installation of "allure-playwright" module
 ```sh
 npm i -D @playwright/test allure-playwright
 ```
 
 2) Installing Allure command line
-```
-Ref: https://www.npmjs.com/package/allure-commandline
-```
+
 ```sh
 npm install --save-dev allure-commandline
 ```
