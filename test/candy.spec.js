@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 const { loginpage } = require ('../pageObject/login')
 const {generateImage} = require ('../pageObject/generateImage')
 // login and generate the Image 
-test.skip('Generate the Image', async ({ page }) => {
+test('Generate the Image', async ({ page }) => {
   // Navigate to the Candy AI homepage
   const username ="suryamowku4@gmail.com"
   const Password ="Goofy*0802"
@@ -33,5 +33,15 @@ test('capture the Insufficient token error message', async ({ page }) => {
  await page.screenshot({ path: '/Users/suryamowku/playwright_Automation/screenshots/ErrorGenerateImage.png', fullPage: true });
  await generateImagePage2.closeIcon();
 
+
+});
+test.skip('skip test for reporting', async ({ page }) => {
+  // Navigate to the Candy AI homepage
+  const username ="suryamowku4@gmail.com"
+  const Password ="Goofy*0802"
+  const loginPageHome = new loginpage(page);
+  await loginPageHome.goTo();
+  await loginPageHome.loginHomePage(username,Password);
+ 
 
 });
